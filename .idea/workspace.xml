@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="16197e27-b432-4fa1-b5c6-0848f8c14adb" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654653660314</updated>
       <workItem from="1654653662363" duration="19000" />
-      <workItem from="1654653687290" duration="1020000" />
+      <workItem from="1654653687290" duration="1392000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.">
       <created>1654653796194</created>
@@ -101,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654654357433</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[Update] package.json">
+      <created>1654654866068</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654654866068</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
