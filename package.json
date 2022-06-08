@@ -1,6 +1,6 @@
 {
   "name": "@lunaproject-discord/web-core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
@@ -13,8 +13,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "17.0.40",
     "@types/react": "17.0.45",
