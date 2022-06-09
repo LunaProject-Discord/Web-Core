@@ -30,7 +30,7 @@ export const TemporaryDrawer = styled(PermanentDrawer)(({ theme }) => ({
         display: 'none'
     },
     '& .MuiDrawer-modal': {
-        zIndex: theme.zIndex.drawer + 1
+        zIndex: `${theme.zIndex.drawer + 1} !important`
     }
 }));
 
