@@ -8,3 +8,5 @@ export interface BaseProps {
 
 export * from './Menu';
 export * from './Select';
+
+export * from './Drawer';
