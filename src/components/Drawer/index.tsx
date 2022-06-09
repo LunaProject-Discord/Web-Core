@@ -25,9 +25,9 @@ export const PermanentDrawer = styled(Drawer)(({ theme }) => ({
 }));
 
 export const TemporaryDrawer = styled(PermanentDrawer)(({ theme }) => ({
-    display: 'block',
+    display: 'block !important',
     [theme.breakpoints.up('md')]: {
-        display: 'none'
+        display: 'none !important'
     },
     '& .MuiDrawer-modal': {
         zIndex: `${theme.zIndex.drawer + 1} !important`
