@@ -32,7 +32,9 @@ export const TemporaryDrawer = styled(Drawer)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         display: 'none'
     },
-    zIndex: `${theme.zIndex.drawer + 1} !important`
+    '& .MuiDrawer-modal': {
+        zIndex: theme.zIndex.drawer + 1
+    }
 }));
 
 export const DrawerToolbar = styled(Toolbar)(({ theme }) => ({
