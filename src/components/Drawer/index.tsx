@@ -29,9 +29,7 @@ export const TemporaryDrawer = styled(Drawer)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         display: 'none'
     },
-    '& .MuiDrawer-modal': {
-        zIndex: `${theme.zIndex.drawer + 1} !important`
-    },
+    zIndex: `${theme.zIndex.drawer + 1} !important`,
     '& .MuiDrawer-paper': {
         width: DRAWER_WIDTH,
         left: 'auto',
