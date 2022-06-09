@@ -24,13 +24,21 @@ export const PermanentDrawer = styled(Drawer)(({ theme }) => ({
     }
 }));
 
-export const TemporaryDrawer = styled(PermanentDrawer)(({ theme }) => ({
-    display: 'block !important',
+export const TemporaryDrawer = styled(Drawer)(({ theme }) => ({
+    display: 'block',
     [theme.breakpoints.up('md')]: {
-        display: 'none !important'
+        display: 'none'
     },
     '& .MuiDrawer-modal': {
         zIndex: `${theme.zIndex.drawer + 1} !important`
+    },
+    '& .MuiDrawer-paper': {
+        width: DRAWER_WIDTH,
+        left: 'auto',
+        boxSizing: 'border-box',
+        ...(theme.palette.mode === 'dark' && {
+            backgroundImage: 'none'
+        })
     }
 }));
 
