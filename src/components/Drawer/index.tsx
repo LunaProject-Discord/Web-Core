@@ -1,4 +1,4 @@
-import { Box, Drawer, styled, Toolbar } from '@mui/material';
+import { Box, Drawer as MuiDrawer, styled, Toolbar } from '@mui/material';
 
 export const DRAWER_WIDTH = 280;
 
@@ -9,11 +9,7 @@ export const DrawerContainer = styled('nav')(({ theme }) => ({
     }
 }));
 
-export const PermanentDrawer = styled(Drawer)(({ theme }) => ({
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-        display: 'block'
-    },
+const Drawer = styled(MuiDrawer)(({ theme }) => ({
     '& .MuiDrawer-paper': {
         width: DRAWER_WIDTH,
         left: 'auto',
@@ -24,20 +20,19 @@ export const PermanentDrawer = styled(Drawer)(({ theme }) => ({
     }
 }));
 
+export const PermanentDrawer = styled(Drawer)(({ theme }) => ({
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+        display: 'block'
+    }
+}));
+
 export const TemporaryDrawer = styled(Drawer)(({ theme }) => ({
     display: 'block',
     [theme.breakpoints.up('md')]: {
         display: 'none'
     },
-    zIndex: `${theme.zIndex.drawer + 1} !important`,
-    '& .MuiDrawer-paper': {
-        width: DRAWER_WIDTH,
-        left: 'auto',
-        boxSizing: 'border-box',
-        ...(theme.palette.mode === 'dark' && {
-            backgroundImage: 'none'
-        })
-    }
+    zIndex: `${theme.zIndex.drawer + 1} !important`
 }));
 
 export const DrawerToolbar = styled(Toolbar)(({ theme }) => ({
