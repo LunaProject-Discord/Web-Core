@@ -6,7 +6,8 @@ export interface BaseProps {
     style?: CSSProperties;
 }
 
+export * from './Link';
 export * from './Menu';
 export * from './Select';
 
-export * from './Drawer';
+export * as default from './Drawer';

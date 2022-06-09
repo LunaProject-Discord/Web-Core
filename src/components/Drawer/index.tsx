@@ -1,4 +1,21 @@
-import { Box, Drawer as MuiDrawer, styled, Toolbar } from '@mui/material';
+import { ArrowRightOutlined, Link } from '@mui/icons-material';
+import {
+    alpha,
+    Box,
+    ButtonBase,
+    Collapse,
+    Drawer as MuiDrawer,
+    styled,
+    Theme as MuiTheme,
+    Toolbar
+} from '@mui/material';
+import { Theme as SystemTheme } from '@mui/system';
+import clsx from 'clsx';
+import { default as NextLink } from 'next/link';
+import { useRouter } from 'next/router';
+import React, { MouseEventHandler, ReactNode, useState } from 'react';
+import { UrlObject } from 'url';
+import { BaseProps } from '../index';
 
 export const DRAWER_WIDTH = 280;
 
@@ -48,3 +65,240 @@ export const DrawerContent = styled(Box)({
     overflowX: 'hidden',
     overscrollBehavior: 'contain'
 });
+
+
+const Item = styled(
+    ({ component: Component = 'div', ...props }: any) => <Component {...props} />,
+    { shouldForwardProp: () => true }
+)(({ theme }) => ({
+    ...theme.typography.body2,
+    width: '100%',
+    paddingTop: 8,
+    paddingBottom: 8,
+    display: 'flex',
+    justifyContent: 'flex-start',
+    fontWeight: theme.typography.fontWeightMedium,
+    outline: 0,
+    borderRadius: theme.shape.borderRadius,
+    transition: theme.transitions.create(['color', 'background-color'], {
+        duration: theme.transitions.duration.shortest
+    }),
+    '&.Mui-focusVisible': {
+        backgroundColor: theme.palette.action.focus
+    },
+    '&:hover': {
+        color: theme.palette.text.primary,
+        backgroundColor: alpha(theme.palette.text.primary, theme.palette.action.hoverOpacity)
+    },
+    [theme.breakpoints.up('md')]: {
+        paddingTop: 6,
+        paddingBottom: 6
+    }
+}));
+
+const ItemButtonIconBase = styled('span')(({ theme }) => ({
+    marginLeft: -20,
+    marginRight: 3,
+    display: 'inline-flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 18,
+    color: theme.palette.text.secondary,
+
+    '& .MuiSvgIcon-root': {
+        fontSize: 18
+    }
+}));
+
+export type Url = string | UrlObject;
+
+interface LinkProps extends BaseProps {
+    href: Url;
+    as?: Url;
+    replace?: boolean;
+    scroll?: boolean;
+    shallow?: boolean;
+    passHref?: boolean;
+    prefetch?: boolean;
+    locale?: string | false;
+}
+
+interface ItemLinkProps {
+    depth: number;
+    theme: MuiTheme & SystemTheme;
+}
+
+const ItemLink = styled(
+    Item,
+    { shouldForwardProp: (prop) => prop !== 'depth' }
+)(({ depth, theme }: ItemLinkProps) => ({
+    color: theme.palette.text.secondary,
+    userSelect: 'none',
+    '&.app-drawer-active': {
+        color: theme.palette.primary.main,
+        backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+        '&:hover': {
+            backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity),
+            '@media (hover: none)': {
+                backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity)
+            }
+        },
+        '&.Mui-focusVisible': {
+            backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.focusOpacity)
+        },
+        '& .MuiSvgIcon-root': {
+            color: theme.palette.primary.main
+        }
+    },
+    paddingLeft: `${8 * (4 + 1.5 * depth)}px`
+}));
+
+interface ItemButtonProps {
+    depth: number;
+}
+
+const ItemButton = styled(
+    Item,
+    { shouldForwardProp: (prop) => prop !== 'depth' }
+)<ItemButtonProps>(({ depth, theme }) => ({
+    paddingLeft: `${8 * (3 + 1.5 * depth)}px`,
+    color: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightMedium,
+    [`&:hover ${ItemButtonIcon}`]: {
+        color: theme.palette.text.primary
+    }
+}));
+
+interface ItemButtonIconProps {
+    open: boolean;
+}
+
+const ItemButtonIcon = styled(
+    ArrowRightOutlined,
+    { shouldForwardProp: (prop) => prop !== 'open' }
+)<ItemButtonIconProps>(({ open, theme }) => ({
+    marginLeft: -19,
+    color: theme.palette.text.secondary,
+    fontSize: 18,
+    transform: open ? 'rotate(90deg)' : ''
+}));
+
+interface UlProps {
+    container?: boolean;
+}
+
+export const StyledUl = styled(
+    'ul',
+    { shouldForwardProp: (prop) => prop !== 'container' }
+)(({ container }: UlProps) => ({
+    margin: 0,
+    padding: 0,
+    listStyle: 'none',
+    '& > li:last-child': {
+        paddingBottom: container ? 8 : 1
+    }
+}));
+
+interface LiProps {
+    depth: number;
+}
+
+const StyledLi = styled(
+    'li',
+    { shouldForwardProp: (prop) => prop !== 'depth' }
+)(({ depth }: LiProps) => ({
+    padding: depth === 0 ? '0 8px' : '1px 0',
+    display: 'block'
+}));
+
+interface Props {
+    id?: string;
+    label: ReactNode;
+    icon?: ReactNode;
+    href?: LinkProps['href'];
+    linkProps?: any;
+    nextLinkProps?: LinkProps;
+
+    depth?: number;
+    topLevel?: boolean;
+    onClick?: MouseEventHandler;
+
+    openImmediately?: boolean;
+    setOpenState?: (open: boolean) => void;
+
+    children?: ReactNode;
+}
+
+export const DrawerItem = (
+    {
+        id = '',
+        label,
+        icon,
+        href,
+        linkProps,
+        nextLinkProps,
+
+        depth = 0,
+        topLevel = false,
+        onClick,
+
+        openImmediately = false,
+        setOpenState = (open) => {
+        },
+
+        children,
+        ...other
+    }: Props
+) => {
+    const [open, setOpen] = useState(openImmediately);
+    const handleClick = () => {
+        const newOpen = !open;
+        setOpen(newOpen);
+        setOpenState(newOpen);
+    };
+
+    if (href) {
+        const router = useRouter();
+        const pathname = typeof href === 'string' ? href : href.pathname;
+        const className = clsx(router.pathname === pathname || router.asPath === pathname && 'app-drawer-active');
+
+        return (
+            <StyledLi {...other} depth={depth}>
+                <NextLink href={href} passHref={true} {...nextLinkProps}>
+                    <ItemLink
+                        component={Link}
+                        className={className}
+                        underline="none"
+                        onClick={onClick}
+                        depth={depth}
+                        {...linkProps}
+                    >
+                        {icon &&
+                            <ItemButtonIconBase style={{ fontSize: '18px !important' }}>{icon}</ItemButtonIconBase>}
+                        {label}
+                    </ItemLink>
+                </NextLink>
+            </StyledLi>
+        );
+    } else {
+        return (
+            <StyledLi {...other} depth={depth}>
+                <ItemButton
+                    component={ButtonBase}
+                    depth={depth}
+                    disableRipple
+                    className={topLevel && 'algolia-lvl0'}
+                    onClick={handleClick}
+                >
+                    <ItemButtonIcon open={open} />
+                    {label}
+                </ItemButton>
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                    <StyledUl>
+                        {children}
+                    </StyledUl>
+                </Collapse>
+            </StyledLi>
+        );
+    }
+};
