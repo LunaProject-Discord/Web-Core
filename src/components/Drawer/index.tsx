@@ -32,7 +32,7 @@ export const TemporaryDrawer = styled(Drawer)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         display: 'none'
     },
-    '& .MuiDrawer-modal': {
+    '&.MuiDrawer-modal': {
         zIndex: theme.zIndex.drawer + 1
     }
 }));
