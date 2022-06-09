@@ -14,8 +14,7 @@ import clsx from 'clsx';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
 import React, { MouseEventHandler, ReactNode, useState } from 'react';
-import { UrlObject } from 'url';
-import { BaseProps } from '../index';
+import { LinkProps, RouteLinkProps } from '../index';
 
 export const DRAWER_WIDTH = 280;
 
@@ -110,19 +109,6 @@ const ItemButtonIconBase = styled('span')(({ theme }) => ({
     }
 }));
 
-export type Url = string | UrlObject;
-
-interface LinkProps extends BaseProps {
-    href: Url;
-    as?: Url;
-    replace?: boolean;
-    scroll?: boolean;
-    shallow?: boolean;
-    passHref?: boolean;
-    prefetch?: boolean;
-    locale?: string | false;
-}
-
 interface ItemLinkProps {
     depth: number;
     theme: MuiTheme & SystemTheme;
@@ -215,9 +201,9 @@ interface Props {
     id?: string;
     label: ReactNode;
     icon?: ReactNode;
-    href?: LinkProps['href'];
-    linkProps?: any;
-    nextLinkProps?: LinkProps;
+    href?: RouteLinkProps['href'];
+    linkProps?: LinkProps;
+    nextLinkProps?: RouteLinkProps;
 
     depth?: number;
     topLevel?: boolean;

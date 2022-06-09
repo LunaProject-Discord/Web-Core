@@ -10,4 +10,4 @@ export * from './Link';
 export * from './Menu';
 export * from './Select';
 
-export * as default from './Drawer';
+export * from './Drawer';
