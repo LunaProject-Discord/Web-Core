@@ -9,5 +9,6 @@ export interface BaseProps {
 export * from './Link';
 export * from './Menu';
 export * from './Select';
+export * from './NumberField';
 
 export * from './Drawer';
