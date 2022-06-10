@@ -1,6 +1,6 @@
 {
   "name": "@lunaproject-discord/web-core",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
@@ -13,8 +13,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
