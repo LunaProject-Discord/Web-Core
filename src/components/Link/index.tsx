@@ -91,3 +91,5 @@ export interface NavRouteLinkProps {
     icon?: any;
     label?: string;
 }
+
+export * from './styles';
