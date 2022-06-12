@@ -1,10 +1,11 @@
-import { ArrowRightOutlined, Link } from '@mui/icons-material';
+import { ArrowRightOutlined } from '@mui/icons-material';
 import {
     alpha,
     Box,
     ButtonBase,
     Collapse,
     Drawer as MuiDrawer,
+    Link,
     styled,
     Theme as MuiTheme,
     Toolbar
@@ -229,6 +230,7 @@ export const DrawerItem = (
         onClick,
 
         openImmediately = false,
+        // tslint:disable-next-line
         setOpenState = (open) => {
         },
 
@@ -259,8 +261,9 @@ export const DrawerItem = (
                         depth={depth}
                         {...linkProps}
                     >
-                        {icon &&
-                            <ItemButtonIconBase style={{ fontSize: '18px !important' }}>{icon}</ItemButtonIconBase>}
+                        {icon && <ItemButtonIconBase style={{ fontSize: '18px !important' }}>
+                            {icon}
+                        </ItemButtonIconBase>}
                         {label}
                     </ItemLink>
                 </NextLink>

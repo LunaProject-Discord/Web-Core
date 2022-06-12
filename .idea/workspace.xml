@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="16197e27-b432-4fa1-b5c6-0848f8c14adb" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Link/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Link/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Drawer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drawer/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,22 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/aoichaan0513/Programming/WebstormProjects/lunaproject-web-core/src/components",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/Users/aoichaan0513/Programming/WebstormProjects/lunaproject-web-core/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/aoichaan0513/Programming/WebstormProjects/lunaproject-web-core/src/components&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/aoichaan0513/Programming/WebstormProjects/lunaproject-web-core/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
@@ -74,7 +72,8 @@
       <updated>1654653660314</updated>
       <workItem from="1654653662363" duration="19000" />
       <workItem from="1654653687290" duration="3600000" />
-      <workItem from="1654733574071" duration="10075000" />
+      <workItem from="1654733574071" duration="11543000" />
+      <workItem from="1655034909521" duration="104000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.">
       <created>1654653796194</created>
@@ -209,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654865667781</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[Update] package.json">
+      <created>1654866843964</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1654866843964</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +235,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Initial Commit." />
     <MESSAGE value="[Update] README.md" />
-    <MESSAGE value="[Update] package.json" />
     <MESSAGE value="[Update] tsconfig.json" />
     <MESSAGE value="[Add] Select" />
     <MESSAGE value="[Update] index.ts" />
@@ -239,7 +244,8 @@
     <MESSAGE value="[Update] Drawer/index.tsx" />
     <MESSAGE value="[Add] NumberField" />
     <MESSAGE value="[Update] workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Update] workspace.xml" />
+    <MESSAGE value="[Update] package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Update] package.json" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
