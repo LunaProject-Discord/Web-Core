@@ -34,7 +34,6 @@ export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
                 onClose={() => setAnchorEl(null)}
                 anchorEl={anchorEl}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                 autoFocus={false}
                 disableAutoFocus
                 disableEnforceFocus
