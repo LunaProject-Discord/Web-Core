@@ -12,7 +12,7 @@ export const Menu = styled(MuiMenu)(({ theme }) => ({
 interface NestedMenuProps {
     icon?: ReactNode;
     label: string;
-    children?: any;
+    children?: ReactNode;
 }
 
 export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
@@ -23,21 +23,21 @@ export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
     const handleMouseLeave = () => setAnchorEl(null);
 
     return (
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div onMouseEnter={handleMouseEnter}>
             <MenuItem onClick={(e) => setAnchorEl(e.currentTarget)}>
                 <ListItemIcon>{icon}</ListItemIcon>
                 {label}
                 <ArrowRightOutlined fontSize="small" color="action" sx={{ marginLeft: 'auto' }} />
             </MenuItem>
             <Menu
+                open={open}
+                onClose={() => setAnchorEl(null)}
                 anchorEl={anchorEl}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                open={open}
                 autoFocus={false}
                 disableAutoFocus
                 disableEnforceFocus
-                onClose={() => setAnchorEl(null)}
                 sx={{
                     pointerEvents: 'none',
                     '& .MuiPaper-root': {
