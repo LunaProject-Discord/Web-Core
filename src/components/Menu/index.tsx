@@ -1,5 +1,6 @@
 import { ArrowRightOutlined } from '@mui/icons-material';
-import { ListItemIcon, Menu as MuiMenu, MenuItem, styled, Typography } from '@mui/material';
+import { ListItemIcon, Menu as MuiMenu, MenuItem, styled, Theme, Typography } from '@mui/material';
+import { SystemStyleObject } from '@mui/system';
 import React, { ReactNode, useState } from 'react';
 
 export const Menu = styled(MuiMenu)(({ theme }) => ({
@@ -13,9 +14,10 @@ interface NestedMenuProps {
     icon?: ReactNode;
     label: string;
     children?: ReactNode;
+    sx: SystemStyleObject<Theme> | ((theme: Theme) => SystemStyleObject<Theme>);
 }
 
-export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
+export const NestedMenu = ({ icon, label, children, sx }: NestedMenuProps) => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const open = Boolean(anchorEl);
 
@@ -41,6 +43,7 @@ export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
                 sx={{
                     pointerEvents: 'none',
                     '& .MuiPaper-root': {
+                        ...sx,
                         width: 270,
                         marginTop: '-9px'
                     }
