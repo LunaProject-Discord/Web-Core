@@ -23,7 +23,7 @@ export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
     const handleMouseLeave = () => setAnchorEl(null);
 
     return (
-        <div onMouseEnter={handleMouseEnter}>
+        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <MenuItem onClick={(e) => setAnchorEl(e.currentTarget)}>
                 <ListItemIcon>{icon}</ListItemIcon>
                 {label}
@@ -34,6 +34,7 @@ export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
                 onClose={() => setAnchorEl(null)}
                 anchorEl={anchorEl}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                 autoFocus={false}
                 disableAutoFocus
                 disableEnforceFocus
@@ -41,7 +42,7 @@ export const NestedMenu = ({ icon, label, children }: NestedMenuProps) => {
                     pointerEvents: 'none',
                     '& .MuiPaper-root': {
                         width: 270,
-                        marginTop: -9
+                        marginTop: '-9px'
                     }
                 }}
             >
