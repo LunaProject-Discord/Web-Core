@@ -43,9 +43,9 @@ export const NestedMenu = ({ icon, label, children, sx }: NestedMenuProps) => {
                 sx={{
                     pointerEvents: 'none',
                     '& .MuiPaper-root': {
-                        ...sx,
                         width: 270,
-                        marginTop: '-9px'
+                        mt: '-9px',
+                        ...sx
                     }
                 }}
             >

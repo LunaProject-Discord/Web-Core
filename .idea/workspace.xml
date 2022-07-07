@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16197e27-b432-4fa1-b5c6-0848f8c14adb" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Menu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +74,7 @@
       <workItem from="1654733574071" duration="11543000" />
       <workItem from="1655034909521" duration="1328000" />
       <workItem from="1656466855348" duration="609000" />
-      <workItem from="1657151008064" duration="2228000" />
+      <workItem from="1657151008064" duration="2432000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.">
       <created>1654653796194</created>
@@ -259,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657152843697</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="[Fix] Menu/index.tsx">
+      <created>1657153261539</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1657153261539</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,10 +295,10 @@
     <MESSAGE value="[Update] workspace.xml" />
     <MESSAGE value="[Update] package.json" />
     <MESSAGE value="[Fix] Drawer/index.tsx" />
-    <MESSAGE value="[Fix] Menu/index.tsx" />
     <MESSAGE value="[Update] Menu/index.tsx" />
     <MESSAGE value="[Upgrade] 依存関係の更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Upgrade] 依存関係の更新" />
+    <MESSAGE value="[Fix] Menu/index.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Fix] Menu/index.tsx" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
