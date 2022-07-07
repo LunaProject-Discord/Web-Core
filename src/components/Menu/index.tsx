@@ -14,7 +14,7 @@ interface NestedMenuProps {
     icon?: ReactNode;
     label: string;
     children?: ReactNode;
-    sx: SystemStyleObject<Theme> | ((theme: Theme) => SystemStyleObject<Theme>);
+    sx?: SystemStyleObject<Theme> | ((theme: Theme) => SystemStyleObject<Theme>);
 }
 
 export const NestedMenu = ({ icon, label, children, sx }: NestedMenuProps) => {
