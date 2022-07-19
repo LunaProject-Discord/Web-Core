@@ -20,7 +20,7 @@ export const NumberField = ({ incrementButtonProps, decrementButtonProps, textFi
             sx={{
                 minWidth: 130,
                 '& .MuiOutlinedInput-root': {
-                    paddingRight: 6
+                    pr: .75
                 },
                 '& .MuiOutlinedInput-input::-webkit-inner-spin-button, & .MuiOutlinedInput-input::-webkit-outer-spin-button': {
                     margin: 0,
