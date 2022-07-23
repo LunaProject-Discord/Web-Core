@@ -6,6 +6,10 @@ import {
     Collapse,
     Drawer as MuiDrawer,
     Link,
+    ListItemButton as MuiListItemButton,
+    ListItemButtonProps,
+    ListItemIcon as MuiListItemIcon,
+    ListItemText,
     styled,
     Theme as MuiTheme,
     Toolbar
@@ -15,7 +19,7 @@ import clsx from 'clsx';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
 import React, { MouseEventHandler, ReactNode, useState } from 'react';
-import { LinkProps, RouteLinkProps } from '../index';
+import { ComposedRouteLink, LinkProps, RouteLinkProps, Url } from '../';
 
 export const DRAWER_WIDTH = 280;
 
@@ -65,6 +69,48 @@ export const DrawerContent = styled(Box)({
     overflowX: 'hidden',
     overscrollBehavior: 'contain'
 });
+
+const ListItemButton = styled(
+    ({ component: Component = 'div', ...props }: any) => <MuiListItemButton {...props} />
+)<ListItemButtonProps>(({ theme }) => ({
+    color: theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[800]
+}));
+
+const ListItemIcon = styled(MuiListItemIcon)(({ theme }) => ({
+    minWidth: 44,
+    marginLeft: 4,
+    color: theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[800]
+}));
+
+interface ListLinkProps {
+    icon?: ReactNode;
+    primary?: ReactNode;
+    secondary?: ReactNode;
+}
+
+export const DrawerListLinkButton = ({ href, icon, primary, secondary }: ListLinkProps & { href: string; }) => {
+    const router = useRouter();
+
+    return (
+        <ListItemButton component={Link} href={href} selected={router.pathname === href || router.asPath === href}>
+            <ListItemIcon>{icon}</ListItemIcon>
+            <ListItemText primary={primary} secondary={secondary} />
+        </ListItemButton>
+    );
+};
+
+export const DrawerListRouteLinkButton = ({ href, icon, primary, secondary }: ListLinkProps & { href: Url; }) => {
+    const router = useRouter();
+    const pathname = typeof href === 'string' ? href : href.pathname;
+
+    return (
+        <ListItemButton component={ComposedRouteLink} href={href}
+                        selected={router.pathname === pathname || router.asPath === pathname}>
+            <ListItemIcon>{icon}</ListItemIcon>
+            <ListItemText primary={primary} secondary={secondary} />
+        </ListItemButton>
+    );
+};
 
 
 const Item = styled(

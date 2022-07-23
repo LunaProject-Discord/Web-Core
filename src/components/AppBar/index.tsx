@@ -12,7 +12,10 @@ interface AppBarBrandProps {
     src: string;
 }
 
-export const AppBarBrand = styled(RouteLink)<AppBarBrandProps>(({ theme, src }) => ({
+export const AppBarBrand = styled(
+    RouteLink,
+    { shouldForwardProp: (prop) => prop !== 'src' }
+)<AppBarBrandProps>(({ theme, src }) => ({
     width: 170,
     height: 50,
     background: `url(${src}) center center / contain no-repeat`,
