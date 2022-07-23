@@ -11,4 +11,5 @@ export * from './Menu';
 export * from './Select';
 export * from './NumberField';
 
+export * from './AppBar';
 export * from './Drawer';
