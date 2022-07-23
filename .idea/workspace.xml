@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16197e27-b432-4fa1-b5c6-0848f8c14adb" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AppBar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBar/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <workItem from="1657151008064" duration="3056000" />
       <workItem from="1658196780998" duration="1699000" />
       <workItem from="1658200013731" duration="6722000" />
-      <workItem from="1658542609977" duration="577000" />
+      <workItem from="1658542609977" duration="874000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.">
       <created>1654653796194</created>
@@ -291,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658196972874</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="[Add] AppBar/index.tsx">
+      <created>1658543232133</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1658543232133</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +328,8 @@
     <MESSAGE value="[Upgrade] 依存関係の更新" />
     <MESSAGE value="[Fix] Menu/index.tsx" />
     <MESSAGE value="[Fix] NumberField/index.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Fix] NumberField/index.tsx" />
+    <MESSAGE value="[Add] AppBar/index.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Add] AppBar/index.tsx" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
